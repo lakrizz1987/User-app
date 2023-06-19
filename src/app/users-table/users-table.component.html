@@ -1,0 +1,29 @@
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>N</th>
+        <th>Full Name</th>
+        <th>Profession</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of usersList | paginate: { itemsPerPage: 10, currentPage: p };let i = index">
+        <td>{{getCurrentNumber(i)}}</td>
+        <td>{{user.firstName}} {{user.lastName}}</td>
+        <td>{{user.profession}}</td>
+        <td>{{user.age}}</td>
+        <td class="gender">{{user.gender}}</td>
+        <td class="actions">
+          <button id={{user.id}} (click)="udateUser($event)">Edit</button>
+          <button id={{user.id}} (click)="deleteUser($event)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<pagination-controls class="pagination-controls" (pageChange)="p = $event"></pagination-controls>
+

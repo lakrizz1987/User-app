@@ -1,0 +1,35 @@
+<form>
+    <label for="first-name">First Name:</label>
+    <input (blur)="firstNameValidator($event)" [ngClass]="{'error': firstNameInvalid }" [(ngModel)]="firstName" type="text" id="first-name" name="first-name" minlength="3" required>
+    <p class="err-message" [ngClass]="{'err-message-show': firstNameInvalid}">First name have to be min 3 characters
+      without numbers!</p>
+
+    <label for="last-name">Last Name:</label>
+    <input (blur)="lastNameValidator($event)" [ngClass]="{'error': lastNameInvalid }" [(ngModel)]="lastName" type="text" id="last-name" name="last-name" minlength="3" required>
+    <p class="err-message" [ngClass]="{'err-message-show': lastNameInvalid}">Last name have to be min 3 characters without
+      numbers!</p>
+
+    <label for="profession">Profession:</label>
+    <input (blur)="professionValidator($event)" [ngClass]="{'error': professionInvalid }" [(ngModel)]="profession" type="text" id="profession" name="profession" minlength="3" required>
+    <p class="err-message" [ngClass]="{'err-message-show': professionInvalid}">Profession have to be min 3 characters
+      without numbers!</p>
+
+    <label for="age">Age:</label>
+    <select [(ngModel)]="age" id="age" name="age" required>
+      <option value="" disabled selected>Select Age</option>
+      <option *ngFor="let age of ages" [value]="age">{{ age }}</option>
+    </select>
+  
+    <label for="gender">Gender:</label>
+    <select [(ngModel)]="gender" id="gender" name="gender" required>
+      <option value="" disabled selected>Select Gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <p class="err-message" [ngClass]="{'err-message-show': fieldEmpty}">All fields are required!</p>
+    
+    <div class="form-btns">
+      <input type="button" value="Back" (click)="onRedirect()">
+      <input type="button" value="Edit" (click)="onEdit()">
+    </div>
+  </form>

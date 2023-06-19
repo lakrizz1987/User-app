@@ -1,0 +1,76 @@
+form {
+    width: 100%;
+    margin-top: 2rem;
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+label {
+    margin: 2px;
+}
+
+form input {
+    font-size: 1.5em;
+    border-radius: 3px;
+    padding: 2px;
+}
+
+#age,
+#gender {
+    font-size: 1.1rem;
+}
+
+.form-btns {
+    display: flex;
+    align-items: center;
+    width: 25%;
+    justify-content: center;
+    gap: 1.5em;
+}
+
+.form-btns input{
+    width: 150px;
+}
+
+.error {
+    border: 2px solid red;
+}
+
+.err-message {
+    opacity: 0;
+    font-size: 0.62em;
+    color: red;
+    transition: opacity 1s ease-in;
+}
+
+.err-message-show {
+    opacity: 1;
+}
+
+p:last-of-type {
+    font-size: 22px;
+}
+
+
+@media (max-width: 480px) {
+
+    form {
+        font-size: 0.9em;
+    }
+
+    form input {
+        font-size: 1em;
+    }
+
+    .form-btns {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .form-btns input {
+        width: 80%;
+    }
+}

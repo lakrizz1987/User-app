@@ -1,0 +1,17 @@
+div{
+    text-align: center;
+}
+
+button{
+    cursor: pointer;
+    font-size: 34px;
+    margin-top: 15px;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+button:hover{
+    border-color: var(--btn-hover-color);
+    background-color: var(--btn-hover-color);
+    color: white;
+}

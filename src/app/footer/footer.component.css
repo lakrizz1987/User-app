@@ -1,0 +1,33 @@
+.footer{
+    background-color: var(--background-element-color);
+    min-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.footer nav ul{
+    list-style: none;
+    font-weight: bold;
+}
+
+.footer nav ul li{
+    display: inline-block;
+    margin: 8px;
+}
+
+.footer nav ul a{
+    color: black;
+}
+
+.footer nav ul a:hover{
+    color: var(--btn-hover-color);
+}
+
+@media (max-width: 580px){
+    .footer{
+        flex-direction: column;
+        font-size: 12px;
+    }
+}

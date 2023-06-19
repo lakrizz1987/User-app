@@ -1,0 +1,102 @@
+.table-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+}
+
+table {
+  border-collapse: collapse;
+  width: 70%; 
+  max-width: 1000px; 
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 6px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: var(--background-element-color);
+}
+
+.actions {
+  text-align: center;
+}
+
+.actions button {
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 3px;
+  margin: 10px;
+  min-width: 20%;
+  transition: background-color 0.2s ease-in;
+}
+
+.actions button:hover{
+  background-color: var(--btn-hover-color);
+  border: none;
+  transform: scale(1.2);
+  color: white;
+}
+
+.gender {
+  text-transform: capitalize;
+}
+
+.message-hide {
+  display: none;
+}
+
+.message-show {
+  max-width: 80%;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: red;
+  z-index: 2;
+}
+
+.pagination-controls{
+  text-align: center;
+}
+
+
+@media (max-width: 480px) {
+  
+  .table-container {
+    overflow-x: auto;
+    align-items: flex-start;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  th,
+  td {
+    white-space: nowrap;
+    font-size: 0.6em;
+    padding: 2px;
+  }
+
+  .actions button {
+    font-size: 1.1em;
+    min-width: 30%;
+    margin: 4px;
+  }
+}
+
+
+

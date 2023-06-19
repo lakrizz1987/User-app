@@ -1,0 +1,15 @@
+<button *ngIf="!menuShow" class="menu-icon" (click)="toggleMenu()">&#8801;</button> 
+<button *ngIf="menuShow" class="menu-icon" (click)="toggleMenu()">X</button> 
+<div>
+  <nav class="main-nav">
+    <h1>User App.</h1>
+    <div class="mobile-links"  [ngClass]="{'links-show': menuShow,  'links-hide': !menuShow}">
+      <a (click)="toggleMenu()" routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
+      <a (click)="toggleMenu()" routerLink="add" routerLinkActive="active" ariaCurrentWhenActive="page">Create User</a>
+    </div>
+    <div  class="hide-desctop-nav">
+      <a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
+      <a routerLink="add" routerLinkActive="active" ariaCurrentWhenActive="page">Create User</a>
+    </div>
+  </nav>
+</div>
