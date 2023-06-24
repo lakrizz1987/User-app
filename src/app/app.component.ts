@@ -8,5 +8,9 @@ import { Router } from '@angular/router';
 })
 
 export class AppComponent {
- 
+  error: any = true;
+
+  setError(value:any){
+    this.error = value;
+  }
 }

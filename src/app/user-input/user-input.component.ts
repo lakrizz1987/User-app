@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataContextService } from '../data-context.service';
 
@@ -58,6 +58,11 @@ export class UserInputComponent {
       this.professionInvalid = false;
     }
   }
+  @Output() inputEmiter = new EventEmitter();
+  
+  onEmptyField(value:boolean){
+    this.inputEmiter.emit(value)
+  }
 
   submitForm(event: any) {
     event.preventDefault();
@@ -65,8 +70,9 @@ export class UserInputComponent {
     const userData = Object.fromEntries(formData);
 
     if (!userData['first-name'] || !userData['last-name'] || !userData['profession'] || !userData['gender'] || !userData['age']) {
-      this.fieldEmpty = true;
-      setTimeout(() => this.fieldEmpty = false, 3000)
+      //this.fieldEmpty = true;
+      //setTimeout(() => this.fieldEmpty = false, 3000)
+      this.onEmptyField(true)
       return
     }
 
