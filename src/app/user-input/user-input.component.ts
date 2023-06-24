@@ -70,8 +70,8 @@ export class UserInputComponent {
     const userData = Object.fromEntries(formData);
 
     if (!userData['first-name'] || !userData['last-name'] || !userData['profession'] || !userData['gender'] || !userData['age']) {
-      //this.fieldEmpty = true;
-      //setTimeout(() => this.fieldEmpty = false, 3000)
+      this.fieldEmpty = true;
+      setTimeout(() => this.fieldEmpty = false, 3000)
       this.onEmptyField(true)
       return
     }
