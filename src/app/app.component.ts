@@ -8,9 +8,18 @@ import { Router } from '@angular/router';
 })
 
 export class AppComponent {
-  error: any = true;
+  error: boolean = false;
 
-  setError(value:any){
+  setError(value:boolean){
     this.error = value;
+  }
+
+  setErrorTrue(componentReference:any){
+    if(!componentReference.inputEmiter){
+      return
+    }
+    componentReference.inputEmiter.subscribe((data:any) => {
+      this.error = data
+   })
   }
 }
